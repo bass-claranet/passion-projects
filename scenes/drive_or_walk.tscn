@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://cy10lc8uemuj4"]
+
+[ext_resource type="Script" uid="uid://c3re7rlticsa" path="res://scripts/selection_screen.gd" id="1_qfvyn"]
+[ext_resource type="PackedScene" uid="uid://bmt0bfcg3j3ph" path="res://scenes/player_option.tscn" id="2_g5u2s"]
+[ext_resource type="Texture2D" uid="uid://kvc1aviqtmvp" path="res://assets/car_icon.PNG" id="3_qfvyn"]
+[ext_resource type="Texture2D" uid="uid://dxpmq0ideyaeo" path="res://assets/ped_icon.PNG" id="4_g5u2s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4dj2"]
+bg_color = Color(0.703327, 0.62271, 0.795265, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp0at"]
+bg_color = Color(0.7254902, 0.7529412, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tusd"]
+bg_color = Color(0.99607843, 0.6901961, 0.6117647, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfvyn"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+
+[node name="Selection Screen" type="Control" unique_id=1834652149]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_qfvyn")
+
+[node name="Panel" type="Panel" parent="." unique_id=505933795]
+layout_mode = 0
+offset_right = 864.0
+offset_bottom = 600.0
+scale = Vector2(1.32893, 1.09566)
+theme_override_styles/panel = SubResource("StyleBoxFlat_v4dj2")
+
+[node name="Label" type="Label" parent="." unique_id=377480632]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -327.0
+offset_top = 50.0
+offset_right = 328.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Who do you want to play as?"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=980994801]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -389.0
+offset_top = -184.0
+offset_right = 389.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(389, 175)
+
+[node name="PlayerOption1" parent="HBoxContainer" unique_id=530322959 instance=ExtResource("2_g5u2s")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xp0at")
+characterPath = "res://scenes/driver.tscn"
+characterTexture = ExtResource("3_qfvyn")
+
+[node name="PlayerOption2" parent="HBoxContainer" unique_id=450297171 instance=ExtResource("2_g5u2s")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1tusd")
+characterPath = "res://scenes/pedestrian.tscn"
+characterTexture = ExtResource("4_g5u2s")
+
+[node name="StartButton" type="Button" parent="." unique_id=537477715]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -100.0
+offset_right = 66.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_qfvyn")
+text = "Start!"
+
+[node name="InstructionsButton" type="Button" parent="." unique_id=1439784449]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 330.0
+offset_top = -100.0
+offset_right = 541.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Instructions"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="InstructionsButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="InstructionsButton" to="." method="_on_instructions_button_pressed"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://be6cnrfhxtgnt"]
+
+[ext_resource type="Texture2D" uid="uid://jir2nlbvj8l0" path="res://assets/stop_sign.png" id="1_eo8om"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ts8k5"]
+size = Vector2(5.5710306, 13.927572)
+
+[node name="StopSign" type="Node2D" unique_id=503373654]
+
+[node name="StopSign" type="Sprite2D" parent="." unique_id=610914314]
+position = Vector2(-2.861023e-06, -1.9073486e-06)
+scale = Vector2(0.359, 0.359)
+texture = ExtResource("1_eo8om")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StopSign" unique_id=121802362]
+position = Vector2(8.106232e-06, 36.211708)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StopSign/StaticBody2D" unique_id=245609310]
+position = Vector2(3.3206106e-07, 0)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_ts8k5")

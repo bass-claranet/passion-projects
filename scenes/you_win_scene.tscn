@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://b7cc1isbb8li2"]
+
+[ext_resource type="Script" uid="uid://57xi8uggq4j6" path="res://scripts/failed_safety.gd" id="1_1dssw"]
+[ext_resource type="Script" uid="uid://ds7jrj2nbnig4" path="res://scripts/play_again.gd" id="1_m3h5k"]
+[ext_resource type="Script" uid="uid://dni2nl6ljtevw" path="res://scripts/scene.gd" id="1_omyrj"]
+[ext_resource type="AudioStream" uid="uid://dt7e0fjjkjvsw" path="res://assets/citrus drive.ogg" id="4_qb5p0"]
+
+[node name="You made it" type="Control" unique_id=959546523]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1dssw")
+
+[node name="Panel" type="Panel" parent="." unique_id=1090591541]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 1156.0
+offset_bottom = 652.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=261312441]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -6.0
+offset_right = 1157.0
+offset_bottom = 651.0
+expand_mode = 1
+script = ExtResource("1_omyrj")
+
+[node name="Label" type="Label" parent="." unique_id=1664012922]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 50.0
+offset_right = 955.0
+offset_bottom = 114.0
+theme_override_colors/font_shadow_color = Color(0.2, 0.2, 0.2, 0.5882353)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 60
+text = "You made it to your destination!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=990854679]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -113.0
+offset_right = 94.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 43
+text = "Play again"
+script = ExtResource("1_m3h5k")
+
+[node name="NotSafe" type="Label" parent="." unique_id=671931057]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -279.0
+offset_top = -190.0
+offset_right = 279.0
+offset_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0.288518, 0.288518, 0.28851795, 0.5686275)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 5
+theme_override_font_sizes/font_size = 35
+text = "But you did not arrive safely.
+Play again to check off all of the safety rules!"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=334086201]
+stream = ExtResource("4_qb5p0")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://uri8rxl2k73c"]
+
+[ext_resource type="Script" uid="uid://ffjqrpj7f4t5" path="res://scripts/to_select_screen.gd" id="1_qvvoj"]
+
+[node name="InstructionsScene" type="Control" unique_id=1210635650]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=25547993]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 647.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=329287000]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -514.5
+offset_top = -178.0
+offset_right = 514.5
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 43
+text = "Know your right of way:
+-The car who stops first on a 4 way stop moves first
+-The car to your right on a 4 way stop goes first if both cars stop simultaneously
+-The traffic with no stop sign on a two-way stop moves first
+-Drivers must yield to pedestrians in any crosswalk
+-ALWAYS drive on the right side of the road	"
+
+[node name="Button" type="Button" parent="." unique_id=1368445579]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.845
+anchor_right = 0.5
+anchor_bottom = 0.845
+offset_left = -126.0
+offset_top = -31.559998
+offset_right = 126.0
+offset_bottom = 31.440002
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Continue"
+script = ExtResource("1_qvvoj")
+
+[node name="Label" type="Label" parent="." unique_id=210736272]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -458.0
+offset_top = 56.0
+offset_right = 459.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 80
+text = "Welcome to The Right of Way!"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

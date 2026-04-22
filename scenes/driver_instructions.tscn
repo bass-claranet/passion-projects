@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://ux8p23ucl8df"]
+
+[ext_resource type="Script" uid="uid://c0f3p28ylh17w" path="res://scripts/driver_instructions.gd" id="1_safge"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oicrc"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.5882353)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="DriverInstructions" type="Control" unique_id=1638769652]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_safge")
+
+[node name="FoldableContainer2" type="FoldableContainer" parent="." unique_id=1294055520]
+layout_mode = 0
+offset_right = 169.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 20
+title = "Controls"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FoldableContainer2" unique_id=374656758]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "WASD= Accelerate
+Space bar= Break"
+
+[node name="Collapse" type="Button" parent="." unique_id=1184565646]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -262.0
+offset_bottom = 27.0
+grow_horizontal = 0
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/disabled = SubResource("StyleBoxFlat_oicrc")
+disabled = true
+text = "How to arrive at your destination safely"
+
+[node name="Panel" type="Panel" parent="Collapse" unique_id=1814943453]
+layout_mode = 0
+offset_top = 30.0
+offset_right = 325.0
+offset_bottom = 154.0
+
+[node name="Checklist" type="VBoxContainer" parent="Collapse" unique_id=2014101468]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -324.0
+offset_top = 28.0
+offset_bottom = 155.0
+grow_horizontal = 0
+
+[node name="CheckBox" type="CheckBox" parent="Collapse/Checklist" unique_id=1976307138]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+disabled = true
+button_pressed = true
+text = "Stay on the road"
+
+[node name="CheckBox2" type="CheckBox" parent="Collapse/Checklist" unique_id=383277722]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+disabled = true
+button_pressed = true
+text = "Stop at stop signs completely before
+driving again"
+
+[node name="CheckBox3" type="CheckBox" parent="Collapse/Checklist" unique_id=2041553339]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+disabled = true
+button_pressed = true
+text = "Wait for pedestrians to cross"

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://d0ihh7lcmmwph"]
+
+[ext_resource type="Script" uid="uid://cjp1jbh1s5dsm" path="res://scripts/driver_player.gd" id="1_uxtse"]
+[ext_resource type="Script" uid="uid://dewrn8taq28n2" path="res://scripts/collide_driver.gd" id="2_3ksro"]
+[ext_resource type="Texture2D" uid="uid://covqs8n50jdgn" path="res://assets/car2.png" id="3_4gr8a"]
+[ext_resource type="Texture2D" uid="uid://bk8qhqk8qd5n7" path="res://assets/car.PNG" id="3_e8cbt"]
+[ext_resource type="Texture2D" uid="uid://de8nxb2y8yw70" path="res://assets/car3.png" id="4_cwa6l"]
+[ext_resource type="Texture2D" uid="uid://bt4ias4p2dihe" path="res://assets/clip1.png" id="4_e8cbt"]
+[ext_resource type="Texture2D" uid="uid://b5din36qj34tp" path="res://assets/car4.png" id="5_tnyy2"]
+[ext_resource type="PackedScene" uid="uid://ux8p23ucl8df" path="res://scenes/driver_instructions.tscn" id="5_toeph"]
+[ext_resource type="Texture2D" uid="uid://bqpffbt7jdmmn" path="res://assets/car5.png" id="6_vnrcx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_toeph"]
+radius = 2.0
+height = 17.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e8cbt"]
+radius = 3.0
+height = 22.0
+
+[node name="Driver" type="CharacterBody2D" unique_id=1808329911 groups=["driver", "player"]]
+script = ExtResource("1_uxtse")
+colors = Array[Texture2D]([ExtResource("3_e8cbt"), ExtResource("3_4gr8a"), ExtResource("4_cwa6l"), ExtResource("5_tnyy2"), ExtResource("6_vnrcx")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1749985227]
+position = Vector2(0, -0.5)
+shape = SubResource("CapsuleShape2D_toeph")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=479785471]
+script = ExtResource("2_3ksro")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2129672739]
+shape = SubResource("CapsuleShape2D_e8cbt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=337216686]
+position = Vector2(0, 2)
+scale = Vector2(0.088, 0.088)
+texture = ExtResource("3_e8cbt")
+offset = Vector2(1.4063404e-07, -23.594479)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1969050781]
+offset = Vector2(0, -10)
+zoom = Vector2(6, 6)
+
+[node name="WarningLabel" type="Node2D" parent="." unique_id=311517215]
+visible = false
+z_index = 10
+
+[node name="TextureRect" type="TextureRect" parent="WarningLabel" unique_id=1042699856]
+offset_left = -30.0
+offset_top = -60.0
+offset_right = 30.0
+offset_bottom = -30.0
+texture = ExtResource("4_e8cbt")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1431535611]
+
+[node name="DriverInstructions" parent="CanvasLayer" unique_id=1638769652 instance=ExtResource("5_toeph")]
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://flbosq7q2yud"]
+
+[ext_resource type="Script" uid="uid://cujl181xfvtjg" path="res://scripts/driver_npc.gd" id="1_xnb80"]
+[ext_resource type="Texture2D" uid="uid://bk8qhqk8qd5n7" path="res://assets/car.PNG" id="2_xnb80"]
+[ext_resource type="Texture2D" uid="uid://d2l8tf6pfbboh" path="res://assets/car2.png" id="3_wkn2i"]
+[ext_resource type="Texture2D" uid="uid://c7ndsuycmuumr" path="res://assets/car3.png" id="4_akein"]
+[ext_resource type="Texture2D" uid="uid://dn57gr8175njq" path="res://assets/car4.png" id="5_ech5h"]
+[ext_resource type="Texture2D" uid="uid://crgxjrdom6mb3" path="res://assets/car5.png" id="6_cst61"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xnb80"]
+radius = 3.0
+height = 20.0
+
+[sub_resource type="Animation" id="Animation_mb05t"]
+resource_name = "drive_down"
+
+[sub_resource type="Animation" id="Animation_akein"]
+resource_name = "drive_left"
+
+[sub_resource type="Animation" id="Animation_ech5h"]
+resource_name = "drive_right"
+
+[sub_resource type="Animation" id="Animation_cst61"]
+resource_name = "drive_up"
+
+[sub_resource type="Animation" id="Animation_cy1ci"]
+resource_name = "idle_down"
+
+[sub_resource type="Animation" id="Animation_hd0rh"]
+resource_name = "idle_left"
+
+[sub_resource type="Animation" id="Animation_wkn2i"]
+resource_name = "idle_right"
+
+[sub_resource type="Animation" id="Animation_w4qj2"]
+resource_name = "idle_up"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_77poo"]
+_data = {
+&"drive_down": SubResource("Animation_mb05t"),
+&"drive_left": SubResource("Animation_akein"),
+&"drive_right": SubResource("Animation_ech5h"),
+&"drive_up": SubResource("Animation_cst61"),
+&"idle_down": SubResource("Animation_cy1ci"),
+&"idle_left": SubResource("Animation_hd0rh"),
+&"idle_right": SubResource("Animation_wkn2i"),
+&"idle_up": SubResource("Animation_w4qj2")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2vdc3"]
+animation = &"drive_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qd1mf"]
+animation = &"drive_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qtggp"]
+animation = &"drive_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3f5qe"]
+animation = &"drive_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_g5g7l"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_2vdc3")
+blend_point_0/pos = Vector2(0, -1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_qd1mf")
+blend_point_1/pos = Vector2(0, 1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_qtggp")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_3f5qe")
+blend_point_3/pos = Vector2(1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nsjk1"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yhi8x"]
+animation = &"idle_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ep8x3"]
+animation = &"idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_748go"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_mohcl"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_nsjk1")
+blend_point_0/pos = Vector2(0, 1.1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_yhi8x")
+blend_point_1/pos = Vector2(0, -1.1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_ep8x3")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_748go")
+blend_point_3/pos = Vector2(1, 0)
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1qqpy"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_booer"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lqaa5"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_c1hd0"]
+states/Drive/node = SubResource("AnimationNodeBlendSpace2D_g5g7l")
+states/Drive/position = Vector2(478.829, 99.9994)
+states/End/position = Vector2(901, 100)
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_mohcl")
+states/Idle/position = Vector2(329.329, 99.9902)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_1qqpy"), "Idle", "Drive", SubResource("AnimationNodeStateMachineTransition_booer"), "Drive", "Idle", SubResource("AnimationNodeStateMachineTransition_lqaa5")]
+graph_offset = Vector2(-40.4107, -50.2125)
+
+[node name="Driver NPC" type="CharacterBody2D" unique_id=1359248868 groups=["driver_trigger"]]
+script = ExtResource("1_xnb80")
+colors = Array[Texture2D]([ExtResource("2_xnb80"), ExtResource("3_wkn2i"), ExtResource("4_akein"), ExtResource("5_ech5h"), ExtResource("6_cst61")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1786061179]
+shape = SubResource("CapsuleShape2D_xnb80")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=385779192]
+position = Vector2(0, 1)
+scale = Vector2(0.087975845, 0.087975845)
+texture = ExtResource("2_xnb80")
+offset = Vector2(9.080045e-06, -14.063777)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1236928812]
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=2131676235]
+libraries/ = SubResource("AnimationLibrary_77poo")
+tree_root = SubResource("AnimationNodeStateMachine_c1hd0")
+parameters/Drive/blend_position = Vector2(-0.00123, 1.07602)
+parameters/Idle/blend_position = Vector2(0.00369, 1.03406)
