@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://btv0vt1kerkip"
+path="res://.godot/imported/bouncy castle.ogg-d0572da09b7de73a51e8b293196f8384.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/bouncy castle.ogg"
+dest_files=["res://.godot/imported/bouncy castle.ogg-d0572da09b7de73a51e8b293196f8384.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
