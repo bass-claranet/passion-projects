@@ -1,0 +1,50 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://drg4b30c7xwue"]
+
+[ext_resource type="Texture2D" uid="uid://ccsvqan5f8kdy" path="res://assets/p52.png" id="1_pmjps"]
+[ext_resource type="Texture2D" uid="uid://x0fx1nx132pq" path="res://assets/p51.png" id="2_n5pjs"]
+[ext_resource type="Texture2D" uid="uid://ffbbhppj8qpx" path="res://assets/p53.png" id="3_2p3e6"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pmjps")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n5pjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_pmjps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2p3e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_pmjps")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n5pjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_pmjps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2p3e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_pmjps")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
