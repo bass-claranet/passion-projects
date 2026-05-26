@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cddo6wuomxvkk"
+path="res://.godot/imported/middle school.map-07f9cb2f75e10b365d65f47c8e959b11.tres"
+
+[deps]
+
+source_file="res://trenchbroom/maps/middle school.map"
+dest_files=["res://.godot/imported/middle school.map-07f9cb2f75e10b365d65f47c8e959b11.tres"]
+
+[params]
+
