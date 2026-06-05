@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3aelvrsxw6hb"]
+
+[ext_resource type="FontFile" uid="uid://bhdq7cwswg8fa" path="res://Claranet-Regular.ttf" id="1_fgkus"]
+[ext_resource type="Script" uid="uid://omlhir0bnpsu" path="res://scripts/title_screen.gd" id="1_sa3yf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fgkus"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sa3yf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgkus"]
+bg_color = Color(0.468504, 0.437155, 0.953816, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4lrb"]
+bg_color = Color(0.799094, 0.404198, 0.836121, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sa3yf"]
+bg_color = Color(0.458091, 0.544311, 0.884328, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Title Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sa3yf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fgkus")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -153.5
+offset_right = 147.0
+offset_bottom = 153.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_fgkus")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sa3yf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fgkus")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s4lrb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sa3yf")
+text = "New game
+"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_fgkus")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sa3yf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fgkus")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s4lrb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sa3yf")
+text = "Continue"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_fgkus")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sa3yf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fgkus")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s4lrb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sa3yf")
+text = "Options"
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_fgkus")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sa3yf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fgkus")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s4lrb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sa3yf")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -273.0
+offset_right = 165.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_fgkus")
+theme_override_font_sizes/font_size = 60
+text = "Yielding to Compromise"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_exit_pressed"]

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://de0yxxq7btrc"]
+
+[ext_resource type="Script" uid="uid://cu4notprapqpy" path="res://node_2d.gd" id="1_5jffm"]
+[ext_resource type="PackedScene" uid="uid://dhha1p2d5ybuu" path="res://characters/linus.tscn" id="2_x1kem"]
+
+[sub_resource type="TileSet" id="TileSet_5jffm"]
+
+[node name="house" type="Node2D" unique_id=700537552]
+script = ExtResource("1_5jffm")
+
+[node name="TileMap" type="TileMap" parent="." unique_id=2077951186]
+tile_set = SubResource("TileSet_5jffm")
+format = 2
+
+[node name="collisions" type="StaticBody2D" parent="." unique_id=1112891435]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions" unique_id=811099493]
+build_mode = 1
+polygon = PackedVector2Array(-181, -104, -375, -101, -373, -30, -181, -29)
+
+[node name="Panel" type="Panel" parent="." unique_id=631906523]
+offset_left = -476.0
+offset_top = -485.0
+offset_right = 481.0
+offset_bottom = 165.0
+
+[node name="Linus" parent="." unique_id=269153722 instance=ExtResource("2_x1kem")]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=800047929]
+position = Vector2(310, -353)
+color = Color(0.852684, 0.566765, 0.505538, 1)
+polygon = PackedVector2Array(96, -38, -97, -37, -97, 33, 96, 34)
+uv = PackedVector2Array(139.5, -57, -26.5, -54.5, -31.5, -58.5, -26.5, 13.5)
+
+[node name="Polygon2D2" type="Polygon2D" parent="." unique_id=1094663138]
+position = Vector2(-319, -348)
+color = Color(0.852684, 0.566765, 0.505538, 1)
+polygon = PackedVector2Array(40.94, -87.36, -32.06, -68.36, -33.56, -53.86, -47.56, -18.86, -47.56, -6.36, -35.56, 30.64, -8.56, 38.14, 29.94, 50.14, 58.94, 55.64, 109.94, 46.64, 117.94, 12.64, 129.94, -38.36, 129.94, -63.86, 85.94, -83.36, 61.44, -86.36)
+uv = PackedVector2Array(40.94, -87.36, -32.06, -68.36, -33.56, -53.86, -47.56, -18.86, -47.56, -6.36, -35.56, 30.64, -8.56, 38.14, 29.94, 50.14, 58.94, 55.64, 109.94, 46.64, 117.94, 12.64, 129.94, -38.36, 129.94, -63.86, 85.94, -83.36, 61.44, -86.36)
+
+[node name="Polygon2D3" type="Polygon2D" parent="." unique_id=1559614580]
+position = Vector2(-277, -64)
+color = Color(0.852684, 0.566765, 0.505538, 1)
+polygon = PackedVector2Array(96, -38, -97, -37, -97, 33, 96, 34)
+uv = PackedVector2Array(139.5, -57, -26.5, -54.5, -31.5, -58.5, -26.5, 13.5)
+
+[node name="Polygon2D4" type="Polygon2D" parent="." unique_id=64489570]
+position = Vector2(0, 143.917)
+scale = Vector2(1, 0.708333)
+color = Color(0.857325, 0.845952, 0.854025, 1)
+polygon = PackedVector2Array(96, -38, -97, -37, -97, 33, 96, 34)
+uv = PackedVector2Array(139.5, -57, -26.5, -54.5, -31.5, -58.5, -26.5, 13.5)
