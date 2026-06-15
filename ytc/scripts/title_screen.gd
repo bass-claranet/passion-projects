@@ -10,20 +10,18 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_start_pressed() -> void:
+func _on_start_pressed():
 	get_tree().change_scene_to_file("res://scenes/prologue.tscn")
-	print("Start pressed")
 
+func _on_about_pressed():
+	pass
 
-func _on_continue_pressed() -> void:
-	print("Continued pressed")
-
-
-func _on_settings_pressed() -> void:
-	print("Settings pressed")
-
-
-func _on_exit_pressed() -> void:	
+func _on_exit_pressed():
 	get_tree().quit()
 	print("Exit pressed")
+
+func _on_instructions_toggled(toggled_on: bool):
+	if toggled_on:
+		$CanvasLayer.show()
+	else:
+		$CanvasLayer.hide()

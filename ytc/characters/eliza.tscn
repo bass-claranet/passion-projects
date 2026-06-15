@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://yjp7msp7cn52"]
+
+[ext_resource type="Script" uid="uid://djwhm10jj4moe" path="res://scripts/move_eliza.gd" id="1_2mt7a"]
+[ext_resource type="Texture2D" uid="uid://1yrm3emwrcfb" path="res://assets/sprites/ey_back.png" id="2_2mt7a"]
+[ext_resource type="Texture2D" uid="uid://c7qnwrgqhc70u" path="res://assets/sprites/ey_front.png" id="3_tobvg"]
+[ext_resource type="Texture2D" uid="uid://bcxnwarplx2vs" path="res://assets/sprites/ey_left.png" id="4_fww0o"]
+[ext_resource type="Texture2D" uid="uid://bctpysaeeu45p" path="res://assets/sprites/ey_right.png" id="6_tobvg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ibjiu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2mt7a")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2mt7a")
+}],
+"loop": true,
+"name": &"back_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tobvg")
+}],
+"loop": true,
+"name": &"front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tobvg")
+}],
+"loop": true,
+"name": &"front_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fww0o")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fww0o")
+}],
+"loop": true,
+"name": &"left_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tobvg")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tobvg")
+}],
+"loop": true,
+"name": &"right_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qm5pi"]
+size = Vector2(50, 95)
+
+[node name="Eliza" type="CharacterBody2D" unique_id=1294702675]
+script = ExtResource("1_2mt7a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=635908629]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_ibjiu")
+animation = &"front_idle"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1358881008]
+position = Vector2(0, -45)
+zoom = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=797331071]
+visible = false
+position = Vector2(0, 28.5)
+shape = SubResource("RectangleShape2D_qm5pi")

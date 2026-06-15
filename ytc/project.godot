@@ -20,20 +20,21 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
 directories/dch_directory={
-"monologue": "res://characters/monologue.dch"
+"characters/eliza": "res://characters/eliza.dch",
+"linus": "res://characters/linus.dch"
 }
 directories/dtl_directory={
-"prologue": "res://timelines/prologue.dtl"
+"argument": "res://timelines/argument.dtl"
 }
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://box styles/default_style.tres"]
+layout/default_style="res://box styles/default_style.tres"
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.01
+text/letter_speed=0.025
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
@@ -43,7 +44,7 @@ animations/join_default_length=0.5
 animations/join_default_wait=true
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
-animations/cross_fade_default_length=0.5
+animations/cross_fade_default_length=0.0
 choices/autofocus_first=true
 choices/delay=0.2
 choices/reveal_delay=0
@@ -54,11 +55,33 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 variables={}
 glossary/default_case_sensitive=true
+layout/style_directory={
+"": "res://box styles/default_style.tres",
+"default_styl": "res://box styles/default_style.tres"
+}
+animations/join_default="Instant In"
+animations/cross_fade_default="Fade Cross"
+text/input_action="dialogic_default_action"
+audio/channel_defaults={
+"": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": false,
+"volume": 0.0
+},
+"music": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": true,
+"volume": 0.0
+}
+}
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
@@ -99,3 +122,7 @@ down={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
 ]
 }
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(1, 1, 1, 1)

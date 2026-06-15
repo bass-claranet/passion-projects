@@ -1,0 +1,78 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.27148438, 0.48536062, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "default_styl",
+"suffix": ""
+},
+&"default_portrait": "crossed_l_talking",
+&"description": "",
+&"display_name": "Linus",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"crossed_l_angry": {
+"export_overrides": {
+"image": "\"res://assets/portraits/lt_1_crossed_l_angry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.95,
+"scene": ""
+},
+"crossed_l_gritting": {
+"export_overrides": {
+"image": "\"res://assets/portraits/lt_1_crossed_l_gritting.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.95,
+"scene": ""
+},
+"crossed_l_talking": {
+"export_overrides": {
+"image": "\"res://assets/portraits/lt_1_crossed_l_talking.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.95,
+"scene": "",
+"sound_mood": "Mood 1"
+},
+"crossed_r_talking": {
+"export_overrides": {
+"image": "\"res://assets/portraits/lt_1_crossed_r_talking.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.95,
+"scene": "",
+"sound_mood": "Mood 1"
+},
+"hip_skeptical": {
+"export_overrides": {
+"image": "\"res://assets/portraits/lt_1_hip_skeptical.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.95,
+"scene": ""
+},
+"hip_talking": {
+"export_overrides": {
+"image": "\"res://assets/portraits/lt_1_hip_talking.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 0.95,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

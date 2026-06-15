@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cymfveyqk2es6"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=166525147]
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=1586117501]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -469.0
+offset_bottom = 56.0
+grow_horizontal = 0
+text = "Task:"
+
+[node name="TextEdit2" type="TextEdit" parent="." unique_id=1097736598]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -470.0
+offset_top = 54.0
+offset_right = -1.0
+offset_bottom = 226.0
+grow_horizontal = 0
+text = "Go outside"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=359224433]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -449.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="." unique_id=601876602]
+offset_left = 1749.0
+offset_top = 983.0
+offset_right = 2024.0
+offset_bottom = 1038.0
+rotation = -1.5707964
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 40
+text = "Temper Meter"
