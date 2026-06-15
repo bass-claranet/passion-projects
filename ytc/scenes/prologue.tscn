@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bgwbv4t8lc7dk" path="res://assets/props/top_table.png" id="8_oigyj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6e114"]
-size = Vector2(92, 98)
+size = Vector2(67, 7.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8hlv"]
 size = Vector2(1930.5, 462.5)
@@ -50,7 +50,7 @@ stretch_mode = 3
 script = ExtResource("4_1wrf5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=212423370]
-position = Vector2(-370, 212)
+position = Vector2(-338, 267.875)
 shape = SubResource("RectangleShape2D_6e114")
 
 [node name="BottomTable" type="TextureRect" parent="." unique_id=24233392]
@@ -111,7 +111,7 @@ stretch_mode = 3
 position = Vector2(0, 1)
 
 [node name="Eliza" parent="." unique_id=1294702675 instance=ExtResource("5_6e114")]
-position = Vector2(-525, 189)
+position = Vector2(-525, 201)
 
 [node name="TopTable" type="TextureRect" parent="." unique_id=1365552622]
 offset_left = -689.0

@@ -73,8 +73,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qm5pi"]
-size = Vector2(50, 95)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgq8m"]
+radius = 29.0
+height = 138.0
 
 [node name="Linus" type="CharacterBody2D" unique_id=1294702675]
 script = ExtResource("1_pgq8m")
@@ -88,10 +89,9 @@ animation = &"front_idle"
 position = Vector2(0, -45)
 zoom = Vector2(1.5, 1.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=797331071]
-visible = false
-position = Vector2(0, 28.5)
-shape = SubResource("RectangleShape2D_qm5pi")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2128936959]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_pgq8m")
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=352162859]
 

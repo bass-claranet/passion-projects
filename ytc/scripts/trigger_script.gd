@@ -2,6 +2,7 @@ extends Area2D
 @onready var linus: CharacterBody2D = $"../Linus"
 @onready var gui = linus.get_node("GUI")
 @onready var meter = linus.get_node("TemperMeter")
+@onready var camera = linus.get_node("Camera2D")
 var has_triggered_event: bool = false
 
 # Called when the node enters the scene tree for the first time.
