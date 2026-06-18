@@ -5,6 +5,8 @@ extends Node2D
 
 func _ready():
 	$Eliza.control_player = false
+	$CanvasModulate.color = Color(0, 0, 0, 1)
+	$CanvasModulate/AnimationPlayer.play("fade_in")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta) -> void:

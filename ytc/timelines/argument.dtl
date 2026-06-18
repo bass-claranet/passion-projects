@@ -54,6 +54,7 @@ update linus (crossed_l_angry) [animation="Shake X" fade="Fade Cross" fade_lengt
 linus: “Excuse me? You’re the one arguing petty over here!”
 leave linus [animation="Fade Out"]
 leave characters/eliza [animation="Fade Out"]
+[wait time="1.0"]
 [background arg="res://assets/scenes/mrs_jeon_appears.png" fade="0.5"]
 characters/eliza: "How the hell am I petty?"
 characters/eliza: "You're the one always acting so pin pointy all the time!"
