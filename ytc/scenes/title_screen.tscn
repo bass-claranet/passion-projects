@@ -174,10 +174,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 69.0
-offset_top = -202.0
-offset_right = 347.66666
-offset_bottom = 194.33337
+offset_left = 103.0
+offset_top = -175.0
+offset_right = 381.66666
+offset_bottom = 221.33337
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 theme_override_constants/separation = 8
@@ -187,7 +187,7 @@ script = SubResource("GDScript_sa3yf")
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_fgkus")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_sa3yf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s4lrb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fgkus")
@@ -198,7 +198,7 @@ text = "Start Demo"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_fgkus")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_sa3yf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s4lrb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fgkus")
@@ -210,7 +210,7 @@ text = "Instructions"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_fgkus")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_sa3yf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s4lrb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fgkus")
@@ -221,7 +221,7 @@ text = "About"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_fgkus")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_sa3yf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s4lrb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fgkus")
@@ -235,10 +235,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -896.0
-offset_top = -489.0
-offset_right = -306.0
-offset_bottom = -234.0
+offset_left = -892.0
+offset_top = -487.0
+offset_right = -302.0
+offset_bottom = -232.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_fgkus")
@@ -247,7 +247,6 @@ text = "Yielding to
 Compromise"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=94987847]
-visible = false
 
 [node name="TextEdit" type="TextEdit" parent="CanvasLayer" unique_id=1238554738]
 anchors_preset = 8
@@ -261,8 +260,12 @@ offset_right = 609.5
 offset_bottom = 380.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "Temper meter:
+theme_override_fonts/font = ExtResource("1_fgkus")
+theme_override_font_sizes/font_size = 50
+text = "Dialogue:
+
+
+Temper meter:
 Some choices lead to outcomes that affect Linus's 
 temper more than others. A higher temper can change
 certain dialogue, so use your logic and thinking to decide

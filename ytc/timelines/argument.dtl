@@ -1,7 +1,6 @@
-join linus (hip_talking) right [animation="Instant In" length="0.0"]
-join characters/eliza (crossed_pouty) left [animation="Instant In" length="0.0"]
+join linus (hip_talking) right [animation="Slide From Right"]
 linus: "So now you understand how to solve linear inequalities, right?"
-update characters/eliza (thinking_talking) [fade="Fade Cross" fade_length="0.0"]
+join characters/eliza (thinking_talking) left [animation="Slide From Left"]
 characters/eliza: “Yes, yes, yes, I know.”
 update linus (crossed_r_talking) [fade="Fade Cross" fade_length="0.0"]
 linus: “Show me.”
@@ -58,3 +57,4 @@ leave characters/eliza [animation="Fade Out"]
 [background arg="res://assets/scenes/mrs_jeon_appears.png" fade="0.5"]
 characters/eliza: "How the hell am I petty?"
 characters/eliza: "You're the one always acting so pin pointy all the time!"
+[signal]

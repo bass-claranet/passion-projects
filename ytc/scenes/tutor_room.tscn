@@ -2,15 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cu4notprapqpy" path="res://scripts/node_2d.gd" id="1_ajb40"]
 [ext_resource type="Texture2D" uid="uid://brki02u8ssjot" path="res://assets/maps/tutoring_classroom1.png" id="2_8xvpj"]
-[ext_resource type="Script" uid="uid://d3us7g45d5yav" path="res://scripts/trigger_script.gd" id="3_ak88q"]
 [ext_resource type="Texture2D" uid="uid://bdqomxvg1hfbq" path="res://assets/props/bottom_table.png" id="4_yeb7d"]
 [ext_resource type="Texture2D" uid="uid://b88qwrsglpewx" path="res://assets/props/chair.png" id="5_wqfk5"]
 [ext_resource type="PackedScene" uid="uid://dhha1p2d5ybuu" path="res://characters/linus.tscn" id="6_r1wvq"]
 [ext_resource type="PackedScene" uid="uid://yjp7msp7cn52" path="res://characters/eliza.tscn" id="7_2oq5e"]
 [ext_resource type="Texture2D" uid="uid://bgwbv4t8lc7dk" path="res://assets/props/top_table.png" id="8_ngqhs"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6e114"]
-size = Vector2(67, 7.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8hlv"]
 size = Vector2(1930.5, 428.5)
@@ -128,6 +124,87 @@ _data = {
 &"fade_in": SubResource("Animation_oigyj")
 }
 
+[sub_resource type="Animation" id="Animation_fq0d1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Linus:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-339, 197)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eliza:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-530, 201)]
+}
+
+[sub_resource type="Animation" id="Animation_ajb40"]
+resource_name = "argument_scene"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Linus:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-339, 197)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eliza:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-525, 201)]
+}
+
+[sub_resource type="Animation" id="Animation_8xvpj"]
+resource_name = "argument_scene_end"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eliza:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-525, 201), Vector2(-739, 201), Vector2(-739, 468), Vector2(-418, 468), Vector2(-418, 691)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8xvpj"]
+_data = {
+&"RESET": SubResource("Animation_fq0d1"),
+&"argument_scene": SubResource("Animation_ajb40"),
+&"argument_scene_end": SubResource("Animation_8xvpj")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fq0d1"]
+size = Vector2(269, 41)
+
 [node name="TutorRoom" type="Node2D" unique_id=1457897501]
 script = ExtResource("1_ajb40")
 
@@ -146,13 +223,6 @@ grow_vertical = 2
 texture = ExtResource("2_8xvpj")
 expand_mode = 1
 stretch_mode = 3
-
-[node name="Area2D" type="Area2D" parent="." unique_id=2139278872]
-script = ExtResource("3_ak88q")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=212423370]
-position = Vector2(-338, 267.875)
-shape = SubResource("RectangleShape2D_6e114")
 
 [node name="BottomTable" type="TextureRect" parent="." unique_id=24233392]
 offset_left = -689.0
@@ -209,10 +279,10 @@ expand_mode = 1
 stretch_mode = 3
 
 [node name="Linus" parent="." unique_id=269153722 instance=ExtResource("6_r1wvq")]
-position = Vector2(0, 1)
+position = Vector2(-339, 197)
 
 [node name="Eliza" parent="." unique_id=1294702675 instance=ExtResource("7_2oq5e")]
-position = Vector2(-525, 201)
+position = Vector2(-530, 201)
 
 [node name="TopTable" type="TextureRect" parent="." unique_id=1365552622]
 offset_left = -689.0
@@ -305,4 +375,11 @@ visible = false
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_e3ep0")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[node name="ScenePlayer" type="AnimationPlayer" parent="." unique_id=1517686454]
+libraries/ = SubResource("AnimationLibrary_8xvpj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=109317019]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1093738615]
+position = Vector2(-381, 747.5)
+shape = SubResource("RectangleShape2D_fq0d1")

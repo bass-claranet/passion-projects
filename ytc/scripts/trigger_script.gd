@@ -7,7 +7,7 @@ var has_triggered_event: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Dialogic.Styles.load_style("default_style")
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

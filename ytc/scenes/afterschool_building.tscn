@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d0ja78yf3c4x2"]
+
+[ext_resource type="Texture2D" uid="uid://b257inthkuw5d" path="res://assets/maps/afterschool_building_hallway.png" id="1_5wy7n"]
+[ext_resource type="PackedScene" uid="uid://dhha1p2d5ybuu" path="res://characters/linus.tscn" id="2_lk7su"]
+
+[node name="Node2D" type="Node2D" unique_id=1817206273]
+
+[node name="AfterschoolBuildingHallway" type="Sprite2D" parent="." unique_id=1942541431]
+texture = ExtResource("1_5wy7n")
+
+[node name="Linus" parent="." unique_id=1294702675 instance=ExtResource("2_lk7su")]
+position = Vector2(-1407, -495)
