@@ -18,7 +18,7 @@ func _ready():
 		meter.hide()
 		linus.control_player = false
 		$ScenePlayer.play("argument_scene")
-		await get_tree().create_timer(1.5).timeout
+		await get_tree().create_timer(1.8).timeout
 		Dialogic.start("argument")
 		Dialogic.timeline_ended.connect(_on_timeline_ended)
 		has_triggered_event = true
@@ -28,8 +28,16 @@ func _process(_delta) -> void:
 	pass
 
 func _on_timeline_ended():
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	
+	var pos = $Linus.global_position
+	tween.tween_property($Camera2D, "global_position", pos, 1.0)
+	await tween.finished
 	gui.show()
 	meter.show()
 	linus.control_player = true
+	camera.make_current()
 	$ScenePlayer.play("argument_scene_end")
 	await get_tree().create_timer(4).timeout

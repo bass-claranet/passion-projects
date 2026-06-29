@@ -247,6 +247,7 @@ text = "Yielding to
 Compromise"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=94987847]
+visible = false
 
 [node name="TextEdit" type="TextEdit" parent="CanvasLayer" unique_id=1238554738]
 anchors_preset = 8

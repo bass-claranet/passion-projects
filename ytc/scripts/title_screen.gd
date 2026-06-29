@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 func _on_start_pressed():
 	$CanvasModulate/AnimationPlayer.play("opacity")
 	await $CanvasModulate/AnimationPlayer.animation_finished
-	get_tree().change_scene_to_file("res://scenes/prologue.tscn")
+	get_tree().change_scene_to_file("res://scenes/tutor_room.tscn")
 
 func _on_about_pressed():
 	pass

@@ -75,22 +75,24 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgq8m"]
 radius = 29.0
-height = 138.0
+height = 112.0
 
 [node name="Linus" type="CharacterBody2D" unique_id=1294702675]
 script = ExtResource("1_pgq8m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=635908629]
+position = Vector2(0, 45)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_ibjiu")
 animation = &"front_idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1358881008]
-position = Vector2(0, -45)
 zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2128936959]
-position = Vector2(0, 10)
+position = Vector2(0, 67)
 shape = SubResource("CapsuleShape2D_pgq8m")
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=352162859]

@@ -88,6 +88,8 @@ animation = &"front_idle"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1358881008]
 position = Vector2(0, -45)
 zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=797331071]
 position = Vector2(0, 1)

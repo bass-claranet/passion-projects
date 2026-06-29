@@ -1,12 +1,144 @@
 [gd_scene format=3 uid="uid://d0ja78yf3c4x2"]
 
 [ext_resource type="Texture2D" uid="uid://b257inthkuw5d" path="res://assets/maps/afterschool_building_hallway.png" id="1_5wy7n"]
+[ext_resource type="Script" uid="uid://so3jbui7afl6" path="res://scripts/afterschool_building.gd" id="1_6fri0"]
 [ext_resource type="PackedScene" uid="uid://dhha1p2d5ybuu" path="res://characters/linus.tscn" id="2_lk7su"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mao7u"]
+size = Vector2(196, 67)
+
+[sub_resource type="Animation" id="Animation_l6q3c"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasModulate:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasModulate:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasModulate:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasModulate:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oigyj"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.083333336, 0.16666667, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasModulate:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.083333336, 0.16666667, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasModulate:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.083333336, 0.16666667, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasModulate:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.083333336, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pl0gm"]
+_data = {
+&"RESET": SubResource("Animation_l6q3c"),
+&"fade_in": SubResource("Animation_oigyj")
+}
+
 [node name="Node2D" type="Node2D" unique_id=1817206273]
+script = ExtResource("1_6fri0")
 
 [node name="AfterschoolBuildingHallway" type="Sprite2D" parent="." unique_id=1942541431]
 texture = ExtResource("1_5wy7n")
 
 [node name="Linus" parent="." unique_id=1294702675 instance=ExtResource("2_lk7su")]
-position = Vector2(-1407, -495)
+position = Vector2(-1428, -480)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=614084670]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1341572701]
+position = Vector2(-1260, -468)
+shape = SubResource("RectangleShape2D_mao7u")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1382367253]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModulate" unique_id=2088042768]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_pl0gm")

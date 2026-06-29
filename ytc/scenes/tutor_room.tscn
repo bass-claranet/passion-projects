@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b88qwrsglpewx" path="res://assets/props/chair.png" id="5_wqfk5"]
 [ext_resource type="PackedScene" uid="uid://dhha1p2d5ybuu" path="res://characters/linus.tscn" id="6_r1wvq"]
 [ext_resource type="PackedScene" uid="uid://yjp7msp7cn52" path="res://characters/eliza.tscn" id="7_2oq5e"]
+[ext_resource type="Script" uid="uid://3qa8f4njjkfp" path="res://scripts/enter_main.gd" id="8_ajb40"]
 [ext_resource type="Texture2D" uid="uid://bgwbv4t8lc7dk" path="res://assets/props/top_table.png" id="8_ngqhs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8hlv"]
@@ -69,6 +70,18 @@ tracks/3/keys = {
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasModulate:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_oigyj"]
 resource_name = "fade_in"
@@ -118,10 +131,27 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.5)
 }
 
+[sub_resource type="Animation" id="Animation_ak88q"]
+resource_name = "opacity"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e3ep0"]
 _data = {
 &"RESET": SubResource("Animation_l6q3c"),
-&"fade_in": SubResource("Animation_oigyj")
+&"fade_in": SubResource("Animation_oigyj"),
+&"opacity": SubResource("Animation_ak88q")
 }
 
 [sub_resource type="Animation" id="Animation_fq0d1"]
@@ -136,7 +166,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-339, 197)]
+"values": [Vector2(-339, 156)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -148,7 +178,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-530, 201)]
+"values": [Vector2(-524, 201)]
 }
 
 [sub_resource type="Animation" id="Animation_ajb40"]
@@ -164,7 +194,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-339, 197)]
+"values": [Vector2(-339, 156)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -203,10 +233,14 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fq0d1"]
-size = Vector2(269, 41)
+size = Vector2(317, 39.5)
 
 [node name="TutorRoom" type="Node2D" unique_id=1457897501]
 script = ExtResource("1_ajb40")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1021123927]
+position = Vector2(-431, 173)
+zoom = Vector2(1.5, 1.5)
 
 [node name="TutoringClassroom" type="TextureRect" parent="." unique_id=1380531421]
 anchors_preset = 8
@@ -278,11 +312,11 @@ texture = ExtResource("5_wqfk5")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="Linus" parent="." unique_id=269153722 instance=ExtResource("6_r1wvq")]
-position = Vector2(-339, 197)
+[node name="Linus" parent="." unique_id=269153722 groups=["player"] instance=ExtResource("6_r1wvq")]
+position = Vector2(-339, 156)
 
-[node name="Eliza" parent="." unique_id=1294702675 instance=ExtResource("7_2oq5e")]
-position = Vector2(-530, 201)
+[node name="Eliza" parent="." unique_id=1294702675 groups=["player"] instance=ExtResource("7_2oq5e")]
+position = Vector2(-524, 201)
 
 [node name="TopTable" type="TextureRect" parent="." unique_id=1365552622]
 offset_left = -689.0
@@ -369,7 +403,7 @@ position = Vector2(-437, -19.25)
 shape = SubResource("RectangleShape2D_18dgh")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1452912781]
-visible = false
+color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModulate" unique_id=1377975554]
 root_node = NodePath("../..")
@@ -378,8 +412,12 @@ libraries/ = SubResource("AnimationLibrary_e3ep0")
 [node name="ScenePlayer" type="AnimationPlayer" parent="." unique_id=1517686454]
 libraries/ = SubResource("AnimationLibrary_8xvpj")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=109317019]
+[node name="Area2D" type="Area2D" parent="." unique_id=882336524]
+script = ExtResource("8_ajb40")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1093738615]
-position = Vector2(-381, 747.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=375006228]
+position = Vector2(-383.5, 743.75)
 shape = SubResource("RectangleShape2D_fq0d1")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

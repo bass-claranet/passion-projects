@@ -1,6 +1,6 @@
-join linus (hip_talking) right [animation="Slide From Right"]
+join linus (hip_talking) right [animation="Instant In"]
 linus: "So now you understand how to solve linear inequalities, right?"
-join characters/eliza (thinking_talking) left [animation="Slide From Left"]
+join characters/eliza (thinking_talking) left [animation="Instant In"]
 characters/eliza: “Yes, yes, yes, I know.”
 update linus (crossed_r_talking) [fade="Fade Cross" fade_length="0.0"]
 linus: “Show me.”
