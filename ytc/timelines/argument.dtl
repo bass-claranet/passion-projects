@@ -1,14 +1,23 @@
 join linus (hip_talking) right [animation="Instant In"]
-linus: "So now you understand how to solve linear inequalities, right?"
+linus: "See these two points?."
+linus: "Draw a line that passes both of them."
 join characters/eliza (thinking_talking) left [animation="Instant In"]
-characters/eliza: “Yes, yes, yes, I know.”
-update linus (crossed_r_talking) [fade="Fade Cross" fade_length="0.0"]
-linus: “Show me.”
+characters/eliza: “Uh huh...”
+update characters/eliza (thinking_gritting)
+linus: "See?"
+linus: "I told you linear inequalities aren't that hard."
 update characters/eliza (crossed_gritting) [fade="Fade Cross" fade_length="0.0"]
+update linus (hip_skeptical)
+characters/eliza: "..."
+update linus (crossed_r_talking) [fade="Fade Cross" fade_length="0.0"]
+linus: “Now, apply what I said to the next question.”
 characters/eliza: “I’m waiting for you to finish explaining.”
-linus: “I was about to.”
-characters/eliza: “How am I supposed to know?”
-- I just said so
+update linus (hip_talking)
+linus: “I'm already done.”
+linus: “Now solve the next question.”
+update characters/eliza (crossed_pouty)
+characters/eliza: “Only if you'll let me solve the problem myself.”
+- Do I need to repeat myself?
 	update linus (hip_talking) [fade="Fade Cross" fade_length="0.0"]
 	linus: “I just said so–”
 	update linus (hip_skeptical) [fade="Fade Cross" fade_length="0.0"]
@@ -18,7 +27,7 @@ characters/eliza: “How am I supposed to know?”
 	characters/eliza: “And even if you do let me, you’re always commenting on every single little—”
 	update linus (crossed_l_talking) [fade="Fade Cross" fade_length="0.0"]
 	linus: “Well, I’m allowing you to solve it right now, even though you might get it wrong—”
-- Question her back
+- Am I asking for too much?
 	linus: "Ok, why are you being so difficult with me right now?"
 	linus: "Show me that you can solve the problem."
 	linus: "That is all I'm asking for."
@@ -26,6 +35,7 @@ characters/eliza: “How am I supposed to know?”
 	characters/eliza: "You're just going to interrupt me again."
 	characters/eliza: "So what's the point?"
 	linus: “I’m allowing you to solve it right now, even though you might get it wrong—”
+- Okay then.
 update characters/eliza (stance_angry) [animation="Shake X" fade="Fade Cross" fade_length="0.0"]
 characters/eliza: “See! Exactly!"
 characters/eliza: "Why won't you ever let me solve the problem myself?"

@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b88qwrsglpewx" path="res://assets/props/chair.png" id="5_wqfk5"]
 [ext_resource type="PackedScene" uid="uid://dhha1p2d5ybuu" path="res://characters/linus.tscn" id="6_r1wvq"]
 [ext_resource type="PackedScene" uid="uid://yjp7msp7cn52" path="res://characters/eliza.tscn" id="7_2oq5e"]
-[ext_resource type="Script" uid="uid://3qa8f4njjkfp" path="res://scripts/enter_main.gd" id="8_ajb40"]
+[ext_resource type="PackedScene" uid="uid://li3vnqba1qxk" path="res://scenes/change_scene.tscn" id="8_8xvpj"]
+[ext_resource type="Script" uid="uid://3qa8f4njjkfp" path="res://scripts/change_scene.gd" id="8_ajb40"]
 [ext_resource type="Texture2D" uid="uid://bgwbv4t8lc7dk" path="res://assets/props/top_table.png" id="8_ngqhs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8hlv"]
@@ -232,8 +233,8 @@ _data = {
 &"argument_scene_end": SubResource("Animation_8xvpj")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fq0d1"]
-size = Vector2(317, 39.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ak88q"]
+size = Vector2(319.5, 110.75)
 
 [node name="TutorRoom" type="Node2D" unique_id=1457897501]
 script = ExtResource("1_ajb40")
@@ -412,12 +413,10 @@ libraries/ = SubResource("AnimationLibrary_e3ep0")
 [node name="ScenePlayer" type="AnimationPlayer" parent="." unique_id=1517686454]
 libraries/ = SubResource("AnimationLibrary_8xvpj")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=882336524]
+[node name="ChangeScene" parent="." unique_id=925898129 instance=ExtResource("8_8xvpj")]
+position = Vector2(-372, 759)
 script = ExtResource("8_ajb40")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=375006228]
-position = Vector2(-383.5, 743.75)
-shape = SubResource("RectangleShape2D_fq0d1")
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChangeScene" unique_id=404054104]
+position = Vector2(-11, -90.625)
+shape = SubResource("RectangleShape2D_ak88q")

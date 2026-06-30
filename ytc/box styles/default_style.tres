@@ -14,7 +14,7 @@
 [sub_resource type="Resource" id="Resource_n34d8"]
 script = ExtResource("1_f2vhh")
 overrides = {
-"global_bg_color": "Color(1, 1, 1, 1)",
+"global_bg_color": "Color(0.9539566, 0.8339844, 1, 1)",
 "global_font": "\"res://Claranet-Regular.ttf\"",
 "global_font_color": "Color(0, 0, 0, 1)",
 "global_font_size": "50.0"
@@ -38,7 +38,7 @@ scene = ExtResource("5_a2rq7")
 overrides = {
 "box_animation_in": "0",
 "box_animation_out": "0",
-"box_color_custom": "Color(1, 1, 1, 1)",
+"box_color_custom": "Color(0.7324219, 0.76168823, 1, 1)",
 "box_size": "Vector2(1200, 250)",
 "name_label_box_offset": "Vector2(0, -10)",
 "name_label_custom_font_size": "40.0",
@@ -88,4 +88,4 @@ layer_info = {
 "16": SubResource("Resource_n84l5"),
 "17": SubResource("Resource_bbjkw")
 }
-metadata/_latest_layer = "13"
+metadata/_latest_layer = ""

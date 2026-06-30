@@ -78,6 +78,7 @@ radius = 29.0
 height = 112.0
 
 [node name="Linus" type="CharacterBody2D" unique_id=1294702675]
+collision_layer = 3
 script = ExtResource("1_pgq8m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=635908629]

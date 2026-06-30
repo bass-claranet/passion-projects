@@ -263,10 +263,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_fgkus")
 theme_override_font_sizes/font_size = 50
-text = "Dialogue:
+text = "Controls:
+WASD to move
+Space to interact with doors
 
-
-Temper meter:
+Dialogue:
 Some choices lead to outcomes that affect Linus's 
 temper more than others. A higher temper can change
 certain dialogue, so use your logic and thinking to decide
