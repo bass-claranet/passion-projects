@@ -1,59 +1,76 @@
+It's Tuesday, October 4th, 2022, another day of tutoring Eliza.
+It's been 25 minutes into the tutoring session, and I would expect Eliza to finish half of her homework, but no.
+Eliza has practically made zero progress.
+She's only finished 2 out of 8 homework problems about linear inequalities, and this isn't even her whole assignment.
+With impatience, I tap on question 2 in Eliza’s worksheet with my pen.
 join linus (hip_talking) right [animation="Instant In"]
-linus: "See these two points?."
-linus: "Draw a line that passes both of them."
+linus: "See how the sign is greater than?."
+linus: "That means the line faces right."
 join characters/eliza (thinking_talking) left [animation="Instant In"]
 characters/eliza: “Uh huh...”
-update characters/eliza (thinking_gritting)
-linus: "See?"
-linus: "I told you linear inequalities aren't that hard."
-update characters/eliza (crossed_gritting) [fade="Fade Cross" fade_length="0.0"]
+update characters/eliza (thinking_gritting) [length="0.3"]
+I lightly trace a right arrow on the number line in Eliza's worksheet.
+characters/eliza: “Hmm.”
+linus: "See, I told you linear inequalities aren't that hard."
 update linus (hip_skeptical)
-characters/eliza: "..."
-update linus (crossed_r_talking) [fade="Fade Cross" fade_length="0.0"]
-linus: “Now, apply what I said to the next question.”
-characters/eliza: “I’m waiting for you to finish explaining.”
-update linus (hip_talking)
-linus: “I'm already done.”
-linus: “Now solve the next question.”
-update characters/eliza (crossed_pouty)
-characters/eliza: “Only if you'll let me solve the problem myself.”
+characters/eliza (crossed_gritting): "..."
+linus (crossed_r_talking): “Now apply that to the next question.”
+characters/eliza: “After you're done explaining.”
+linus (hip_talking): “I am.”
+characters/eliza: “Sure you are.”
+linus: “Tch.”
+linus: “Solve the next question.”
+characters/eliza (crossed_pouty): “Only if you'll let me solve the problem myself.”
 - Do I need to repeat myself?
-	update linus (hip_talking) [fade="Fade Cross" fade_length="0.0"]
-	linus: “I just said so–”
+	linus (crossed_l_angry): “Eliza!”
+	linus: “Do I need to keep repeating myself?”
+	characters/eliza (crossed_talking): “...?!”
+	linus (hip_talking): “Solve the equation and show me that you can—”
 	update linus (hip_skeptical) [fade="Fade Cross" fade_length="0.0"]
-	update characters/eliza (crossed_gritting) [fade="Fade Cross" fade_length="0.0"]
-	characters/eliza: “No, genuinely - whenever I start a math problem, you're always stopping me from solving it.”
-	update characters/eliza (stance_gritting) [fade="Fade Cross" fade_length="0.0"]
-	characters/eliza: “And even if you do let me, you’re always commenting on every single little—”
-	update linus (crossed_l_talking) [fade="Fade Cross" fade_length="0.0"]
-	linus: “Well, I’m allowing you to solve it right now, even though you might get it wrong—”
-- Am I asking for too much?
-	linus: "Ok, why are you being so difficult with me right now?"
-	linus: "Show me that you can solve the problem."
-	linus: "That is all I'm asking for."
-	update characters/eliza (crossed_gritting) [fade="Fade Cross" fade_length="0.0"]
-	characters/eliza: "You're just going to interrupt me again."
-	characters/eliza: "So what's the point?"
-	linus: “I’m allowing you to solve it right now, even though you might get it wrong—”
+	characters/eliza (crossed_gritting): “No, seriously—"
+	characters/eliza: "Whenever I solve a math problem, you always interrupt me.”
+	characters/eliza (stance_gritting): “So even if you are letting me, you’re always commenting on every single little thing—”
+	linus (crossed_l_talking): "I’m allowing you to solve it right now.”
+	characters/eliza (crossed_pouty): "Then promise you won't interrupt me.”
+	- Don't tell me what to do
+		linus (crossed_l_gritting): "Since when did you have the right to tell me what to do?"
+		characters/eliza (stance_angry): "All I'm asking is that you stop interrupting me!"
+		linus: "Helping you isn't interrupting you!"
+		linus: "If you don't need help, at least do the homework correctly—"
+	- Only if you miss a step
+		linus: "I'll have to if you miss a step."
+		linus: "Otherwise, you can't learn from your mistakes."
+- What do you mean?
+	linus: "What do you mean?"
+	characters/eliza (crossed_gritting): "You're just going to interrupt me again."
+	characters/eliza: "So why should I solve it?"
+	linus: “I’m allowing you to solve it right now.”
+	characters/eliza: "Then don't interrupt me."
+	linus: “I still have to watch.”
+	characters/eliza (crossed_pouty): "Hmph."
 - Okay then.
+	linus (crossed_l_talking): “Okay, fine."
+	linus: “Show me you understand then."
+	linus: “Do not disappoint me."
+	characters/eliza (stance_gritting): “..."
+	update linus (hip_skeptical)
+	"I gave Eliza a minute to solve the third problem on her own."
+	"Already, she accidentally mistakened a subtraction for addition.."
+	- Call her out
+	- Let her be
 update characters/eliza (stance_angry) [animation="Shake X" fade="Fade Cross" fade_length="0.0"]
 characters/eliza: “See! Exactly!"
 characters/eliza: "Why won't you ever let me solve the problem myself?"
 characters/eliza: "Could you just stop monitoring me?”
 update characters/eliza (stance_gritting) [fade="Fade Cross" fade_length="0.0"]
-update linus (crossed_l_talking) [fade="Fade Cross" fade_length="0.0"]
-linus: “See, you usually get a step wrong whenever you solve a problem by yourself. So surely, someone needs to correct your mistakes.”
-update characters/eliza (stance_angry) [animation="Shake X" fade="Fade Cross" fade_length="0.0"]
-characters/eliza: “But that's all you’re focused on!!”
+linus (crossed_l_talking): “See, you usually get a step wrong whenever you solve a problem by yourself. So surely, someone needs to correct your mistakes.”
+characters/eliza (stance_angry): “But that's all you’re focused on!!”
 update characters/eliza (stance_gritting) [fade="Fade Cross" fade_length="0.0"]
-update linus (crossed_l_angry) [fade="Fade Cross" fade_length="0.0"]
-linus: “Why are you complaining about someone helping your mistakes when you are the one who signed up for tutoring?”
-update characters/eliza (stance_angry) [fade="Fade Cross" fade_length="0.0"]
+linus (crossed_l_angry): “Why are you complaining about someone helping your mistakes when you are the one who signed up for tutoring?”
 update linus (crossed_l_gritting) [fade="Fade Cross" fade_length="0.0"]
-characters/eliza: “Why do you always have to complain about my mistakes all the time, so you can go out of your way to control the hell out of me?”
+characters/eliza (stance_angry): “Why do you always have to complain about my mistakes all the time, so you can go out of your way to control the hell out of me?”
 update characters/eliza (stance_gritting) [fade="Fade Cross" fade_length="0.0"]
-update linus (crossed_l_angry) [animation="Shake X" fade="Fade Cross" fade_length="0.0"]
-linus: “My intention isn’t even to control you!”
+linus (crossed_l_angry): “My intention isn’t even to control you!”
 characters/eliza: “That’s what it seems like to me when you constantly monitor my actions!”
 update linus (crossed_l_talking) [fade="Fade Cross" fade_length="0.0"]
 linus: “Then realize that I’m not.”

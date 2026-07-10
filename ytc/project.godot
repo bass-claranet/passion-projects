@@ -29,14 +29,15 @@ directories/dch_directory={
 "linus": "res://characters/linus.dch"
 }
 directories/dtl_directory={
-"argument": "res://timelines/argument.dtl"
+"argument": "res://timelines/argument.dtl",
+"extra": "res://timelines/extra.dtl"
 }
 layout/style_list=["res://box styles/default_style.tres"]
 layout/default_style="res://box styles/default_style.tres"
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.025
-text/initial_text_reveal_skippable=false
-text/text_reveal_skip_delay=0.5
+text/letter_speed=0.02
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.01
 text/advance_delay=0.1
 text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
@@ -57,9 +58,9 @@ variables={}
 glossary/default_case_sensitive=true
 layout/style_directory={
 "": "res://box styles/default_style.tres",
-"default_styl": "res://box styles/default_style.tres"
+"default_style": "res://box styles/default_style.tres"
 }
-animations/join_default="Instant In"
+animations/join_default="Fade In Up"
 animations/cross_fade_default="Fade Cross"
 text/input_action="dialogic_default_action"
 audio/channel_defaults={
