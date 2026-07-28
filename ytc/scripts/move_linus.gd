@@ -27,11 +27,11 @@ func play_anim(dir):
 		if dir.y == -1:
 			$AnimatedSprite2D.play("back")
 		if dir.x == 1:
-			$AnimatedSprite2D.play("right")
+			$AnimatedSprite2D.play("front")
 		if dir.y == 1:
 			$AnimatedSprite2D.play("front")
 		if dir.x == -1:
-			$AnimatedSprite2D.play("left")
+			$AnimatedSprite2D.play("front")
 			
 func player():
 	pass

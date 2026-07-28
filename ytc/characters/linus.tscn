@@ -1,24 +1,41 @@
 [gd_scene format=3 uid="uid://dhha1p2d5ybuu"]
 
 [ext_resource type="Script" uid="uid://c1to0lcjfb8uh" path="res://scripts/move_linus.gd" id="1_pgq8m"]
-[ext_resource type="Texture2D" uid="uid://dr5cse81qiwqc" path="res://assets/sprites/lt_back.png" id="2_pgq8m"]
-[ext_resource type="Texture2D" uid="uid://b43qh7poc1bxq" path="res://assets/sprites/lt_front.png" id="3_w18r6"]
-[ext_resource type="Texture2D" uid="uid://klducy417612" path="res://assets/sprites/lt_left.png" id="4_pq76u"]
-[ext_resource type="Texture2D" uid="uid://cv1bpstfh7ly8" path="res://assets/sprites/lt_right.png" id="5_ena0w"]
+[ext_resource type="Texture2D" uid="uid://dgcwe74uuhfb" path="res://assets/sprites/lt_back1.png" id="2_pq76u"]
+[ext_resource type="Texture2D" uid="uid://tgobg3m16ju1" path="res://assets/sprites/lt_back2.png" id="3_ena0w"]
+[ext_resource type="Texture2D" uid="uid://b7p8mr8wgrf6k" path="res://assets/sprites/lt_back3.png" id="4_hj0sh"]
+[ext_resource type="Texture2D" uid="uid://bu2qsxy6ahx0l" path="res://assets/sprites/lt_front1.png" id="5_qm5pi"]
+[ext_resource type="Texture2D" uid="uid://xb5dj4nsxxh6" path="res://assets/sprites/lt_front2.png" id="6_qjb75"]
+[ext_resource type="Texture2D" uid="uid://dbw87hn61no1e" path="res://assets/sprites/lt_front3.png" id="7_uecss"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u6y0h"]
+load_path = "res://.godot/imported/lt_left.png-a5203e236071bc5b9b93b0a4114eec5a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jwfca"]
+load_path = "res://.godot/imported/lt_right.png-b9193637285fb1b0fa6c02b2be427d88.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ibjiu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pgq8m")
+"texture": ExtResource("2_pq76u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ena0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hj0sh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ena0w")
 }],
 "loop": true,
 "name": &"back",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pgq8m")
+"texture": ExtResource("3_ena0w")
 }],
 "loop": true,
 "name": &"back_idle",
@@ -26,15 +43,24 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_w18r6")
+"texture": ExtResource("5_qm5pi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qjb75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uecss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qjb75")
 }],
 "loop": true,
 "name": &"front",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_w18r6")
+"texture": ExtResource("6_qjb75")
 }],
 "loop": true,
 "name": &"front_idle",
@@ -42,7 +68,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_pq76u")
+"texture": SubResource("CompressedTexture2D_u6y0h")
 }],
 "loop": true,
 "name": &"left",
@@ -50,7 +76,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_pq76u")
+"texture": SubResource("CompressedTexture2D_u6y0h")
 }],
 "loop": true,
 "name": &"left_idle",
@@ -58,7 +84,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_ena0w")
+"texture": SubResource("CompressedTexture2D_jwfca")
 }],
 "loop": true,
 "name": &"right",
@@ -66,7 +92,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_ena0w")
+"texture": SubResource("CompressedTexture2D_jwfca")
 }],
 "loop": true,
 "name": &"right_idle",
@@ -86,6 +112,7 @@ position = Vector2(0, 45)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_ibjiu")
 animation = &"front_idle"
+frame_progress = 0.7191466
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1358881008]
 zoom = Vector2(1.5, 1.5)
@@ -113,11 +140,12 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -469.0
 offset_top = 56.0
-offset_bottom = 228.0
+offset_bottom = 104.0
 grow_horizontal = 0
 text = "Go outside"
 
 [node name="TemperMeter" type="CanvasLayer" parent="." unique_id=26217485]
+visible = false
 
 [node name="ProgressBar" type="ProgressBar" parent="TemperMeter" unique_id=920148260]
 offset_left = 22.0

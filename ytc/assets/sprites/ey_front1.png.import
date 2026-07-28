@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpdjjhf6ep3ul"
-path="res://.godot/imported/ey_right.png-a9693e40a3c296673525cdabeadab168.ctex"
+uid="uid://ch6fkq1jc46j0"
+path="res://.godot/imported/ey_front1.png-92bd612414dbf8ba91c253d835960ce9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ey_right.png"
-dest_files=["res://.godot/imported/ey_right.png-a9693e40a3c296673525cdabeadab168.ctex"]
+source_file="res://assets/sprites/ey_front1.png"
+dest_files=["res://.godot/imported/ey_front1.png-92bd612414dbf8ba91c253d835960ce9.ctex"]
 
 [params]
 
