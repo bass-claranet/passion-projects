@@ -33,13 +33,15 @@ characters/eliza (crossed_pouty): “Only if you'll let me solve the problem mys
 	linus (crossed_l_talking): "I’m allowing you to solve it right now.”
 	characters/eliza (crossed_pouty): "Then promise you won't interrupt me.”
 	- Don't tell me what to do
-		linus (crossed_l_gritting): "Since when did you have the right to tell me what to do?"
+		linus (crossed_l_gritting): "Excuse me?"
+		linus: "That was never a promise!"
 		characters/eliza (stance_angry): "All I'm asking is that you stop interrupting me!"
 		linus: "Helping you isn't interrupting you!"
-		linus: "If you don't need help, at least do the homework correctly—"
+		linus (crossed_l_gritting): "If you don't need help, at least do the homework correctly—"
 	- Only if you miss a step
 		linus: "I'll have to if you miss a step."
-		linus: "Otherwise, you can't learn from your mistakes."
+		characters/eliza (stance_gritting): "Grrgh!"
+		Eliza looks at me with a tense face.
 - What do you mean?
 	linus: "What do you mean?"
 	characters/eliza (crossed_gritting): "You're just going to interrupt me again."
@@ -61,10 +63,9 @@ characters/eliza (crossed_pouty): “Only if you'll let me solve the problem mys
 update characters/eliza (stance_angry) [animation="Shake X" fade="Fade Cross" fade_length="0.0"]
 characters/eliza: “See! Exactly!"
 characters/eliza: "Why won't you ever let me solve the problem myself?"
-characters/eliza: "Could you just stop monitoring me?”
 update characters/eliza (stance_gritting) [fade="Fade Cross" fade_length="0.0"]
-linus (crossed_l_talking): “See, you usually get a step wrong whenever you solve a problem by yourself. So surely, someone needs to correct your mistakes.”
-characters/eliza (stance_angry): “But that's all you’re focused on!!”
+linus (crossed_l_talking): “You usually get a step wrong whenever you solve a problem by yourself. So surely, someone needs to correct your mistakes.”
+characters/eliza (stance_angry): “That's all you’re so focused on!!”
 update characters/eliza (stance_gritting) [fade="Fade Cross" fade_length="0.0"]
 linus (crossed_l_angry): “Why are you complaining about someone helping your mistakes when you are the one who signed up for tutoring?”
 update linus (crossed_l_gritting) [fade="Fade Cross" fade_length="0.0"]
@@ -73,15 +74,18 @@ update characters/eliza (stance_gritting) [fade="Fade Cross" fade_length="0.0"]
 linus (crossed_l_angry): “My intention isn’t even to control you!”
 characters/eliza: “That’s what it seems like to me when you constantly monitor my actions!”
 update linus (crossed_l_talking) [fade="Fade Cross" fade_length="0.0"]
-linus: “Then realize that I’m not.”
+linus: “Again, I'm not.”
 update characters/eliza (crossed_gritting) [fade="Fade Cross" fade_length="0.0"]
-characters/eliza: “Liar.”
+characters/eliza: “You controlling liar.”
 update linus (crossed_l_angry) [animation="Shake X" fade="Fade Cross" fade_length="0.0"]
-linus: “Excuse me? You’re the one arguing petty over here!”
+linus: “Excuse me?”
 leave linus [animation="Fade Out"]
 leave characters/eliza [animation="Fade Out"]
 [wait time="1.0"]
-[background arg="res://assets/scenes/mrs_jeon_appears.png" fade="0.5"]
-characters/eliza: "How the hell am I petty?"
-characters/eliza: "You're the one always acting so pin pointy all the time!"
-[signal]
+[background arg="res://assets/scenes/its_linus_fault.png" fade="0.5"]
+characters/eliza: "You've been controlling since day one!"
+characters/eliza: "You never allow me to do anything myself!"
+linus: "Can't you understand my intention?"
+linus: "I'm trying to help you!"
+characters/eliza: "Stop being so mean about it!"
+linus: "Stop making me repeat myself!"
